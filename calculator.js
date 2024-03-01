@@ -1,29 +1,45 @@
  
-function calculate(operation) {
-    const firstNumber = Number(document.getElementById("firstNumber").value);
-    const secondNumber = Number(document.getElementById("secondNumber").value);
-    let result;
-  
-    if (operation === "+") {
-      result = firstNumber + secondNumber;
-    } 
-    else if (operation === "-") {
-      result = firstNumber - secondNumber;
-    } 
-    else if (operation === "*") {
-      result = firstNumber * secondNumber;
-    } 
-    else if (operation === "/") {
-      if (secondNumber === 0) {
-        result = "Division by zero is not allowed.";
-      } 
-      else {
-        result = firstNumber / secondNumber;
-      }
-    } 
-    else {
-      result = "Invalid operation";
-    }
-  
-    document.getElementById("answer").innerHTML ="the answeris:"+ result;
+function addToDisplay(value) {
+  document.getElementById('display').value += value;
 }
+
+function clearDisplay() {
+  document.getElementById('display').value = '';
+}
+
+function calculate(){
+  let result = [];
+  let answer;
+  try {
+      if(document.getElementById("display").value.includes("+")){
+          result = document.getElementById("display").value.split('+');
+          return parseInt(result[0]) + parseInt(result[1]);
+          }
+
+          else if(document.getElementById("display").value.includes("-")){
+          result = document.getElementById("display").value.split('-');
+          return parseInt(result[0]) - parseInt(result[1]);
+          }
+
+          else if(document.getElementById("display").value.includes("/")){
+          result = document.getElementById("display").value.split('/');
+          if (parseInt(result[1]) !== 0) {
+              return parseInt(result[0]) / parseInt(result[1]);
+          } else {
+              return "Error";
+          }
+      }
+
+          else{
+          result = document.getElementById("display").value.split('*');
+          return answer =  parseInt(result[0]) * parseInt(result[1]);
+          }
+  } catch (error) {
+      document.getElementById('display').value = 'Error';
+  }
+
+}
+function Answer(){
+  let a = calculate()
+  document.getElementById('display').value = a;
+  }
