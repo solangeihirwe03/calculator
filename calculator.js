@@ -1,29 +1,15 @@
  
-function calculate(operation) {
-    const firstNumber = Number(document.getElementById("firstNumber").value);
-    const secondNumber = Number(document.getElementById("secondNumber").value);
-    let result;
-  
-    if (operation === "+") {
-      result = firstNumber + secondNumber;
-    } 
-    else if (operation === "-") {
-      result = firstNumber - secondNumber;
-    } 
-    else if (operation === "*") {
-      result = firstNumber * secondNumber;
-    } 
-    else if (operation === "/") {
-      if (secondNumber === 0) {
-        result = "Division by zero is not allowed.";
-      } 
-      else {
-        result = firstNumber / secondNumber;
-      }
-    } 
-    else {
-      result = "Invalid operation";
+function calculate() {
+  try{
+    var result = eval(document.form[0].display.value);
+    if (result=== infinity || result=== -infinity){
+      throw "infinity"
     }
-  
-    document.getElementById("answer").innerHTML ="the answeris:"+ result;
-}
+    else{
+      document.forms[0].display.value = result;
+    }
+  }
+    catch(error){
+      document.forms[0].display.value = "error";
+    }
+  }

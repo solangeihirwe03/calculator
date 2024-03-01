@@ -40,37 +40,9 @@
                 <div>
                     <input type="button" value="00" onclick="display.value += '00'">
                     <input type="button" value="0" onclick="display.value += '0'">
-                    <input type="button" value="=" class="equal" onclick="answer()">
+                    <input type="button" value="=" class="equal" onclick="display.value= eval(display.value)">
                 </div>
             </form>
-            <!--
-            <div class="function">
-                <div class="number">
-                    <button>1</button>
-                    <button>2</button>
-                    <button>3</button><br>
-                    <button>4</button>
-                    <button>5</button>
-                    <button>6</button><br>
-                    <button>7</button>
-                    <button>8</button>
-                    <button>9</button><br>
-                    <button>0</button>
-                    <button>.</button>
-                    <button>DEL</button>
-            
-                </div>
-                <div class="operation-section">
-                    <button onclick="calculate('+')">+</button><br/><br>
-                    <button onclick="calculate('-')">-</button><br/><br>
-                    <button onclick="calculate('*')">*</button><br><br>
-                    <button onclick="calculate('/')">/</button><br><br>
-                    
-                    <button>AC</button>
-                </div>
-                
-            
-            </div>-->
         </section>
     </div>
     
